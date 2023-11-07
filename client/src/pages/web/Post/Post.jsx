@@ -1,9 +1,9 @@
 import React from 'react'
 
-export  function Home() {
+export function Post() {
   return (
     <div>
-        <h1>Estamos en Home</h1>
+        <h1>Estamos en Post</h1>
     </div>
   )
 }

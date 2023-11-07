@@ -1,9 +1,9 @@
 import React from 'react'
 
-export  function Home() {
+export function Courses() {
   return (
     <div>
-        <h1>Estamos en Home</h1>
+        <h1>Estamos en Cursos</h1>
     </div>
   )
 }
