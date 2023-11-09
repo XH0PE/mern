@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Tab } from 'semantic-ui-react'
 import { iconLogo } from '../../../assets'
 import './Auth.scss'
+import { RegisterForm } from '../../../components/Admin/Auth/RegisterForm'
   
 export function Auth() {
   const [activeIndex, setActiveIndex] = useState(1)
