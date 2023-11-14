@@ -1,4 +1,4 @@
-import iconLogo from './png/logo_icon.png'
+import iconLogo from './png/iconLogo.png'
 // import authBg from './jpg/auth-bg.jpg'
 // import homeBanner from './jpg/home-banner.jpg'
 // import noAvatar from './jpg/no-avatar.jpg'
