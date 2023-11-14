@@ -2,12 +2,12 @@ import * as Yup from 'yup'
 
 export function initialValues() {
     return {
-        avatar: '',
+        avatar: user?.avatar || '',
         fileAvatar: null,
-        firstname: '',
-        lastname: '',
-        email: '',
-        role: '',
+        firstname: user?.firstname || '',
+        lastname: user?.lastname || '',
+        email: user?.email || '',
+        role: user?.role || '',
         password: '',
     }
 }
@@ -18,6 +18,6 @@ export function validationSchema() {
         lastname: Yup.string().required(true),
         email: Yup.string().email(true).required(true),
         role: Yup.string().required(true),
-        password: Yup.string().required(true),
+        password: user ? Yup.string() : Yup.string().required(true),
     })
 }

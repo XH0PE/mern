@@ -9,11 +9,9 @@ const userController = new User()
 
 export function ListUsers(props) {
 
-    const { usersActive } = props
+    const { usersActive, reload, onReload } = props
     const { users, setUsers} = useState(null)
-    const { accessToken} = useAuth()
-
-    console.log(users)
+    const { accessToken } = useAuth()
 
     useEffect(() => {
         (async () => {
@@ -24,10 +22,10 @@ export function ListUsers(props) {
                 console.log(error)
             }
         })()
-    }, [usersActive])
+    }, [usersActive, reload])
 
     if(!users) return <Loader active inline='centered'/>
     if(size(users) === 0) return 'No hay ningun usuario'
 
-  return map(users, (user) => <UserItem key={user._id} user={user}/>)
+  return map(users, (user) => <UserItem key={user._id} user={user} onReload={onReload}/>)
 }

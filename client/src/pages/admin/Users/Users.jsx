@@ -7,15 +7,17 @@ import './Users.scss'
 export function Users() {
 
     const [showModal, setShowModal] = useState(false)
+    const [reload, setReload] = useState(false)
 
     const onOpenCloseModal = () => setShowModal((prevState) => !prevState)
+    const onRelad = () => setReload((prevState) => !prevState)
  
     const panes = [
         {
             menuItem: 'Usuarios Activos',
             render: () => (
                 <Tab.Pane attached={false}>
-                    <ListUsers usersActive={true}/>
+                    <ListUsers usersActive={true} reload={reload} onReload={onRelad}/>
                 </Tab.Pane>
             )
         },
@@ -23,7 +25,7 @@ export function Users() {
             menuItem: 'Usuarios Inactivos',
             render: () => (
                 <Tab.Pane attached={false}>
-                    <ListUsers usersActive={false}/>
+                    <ListUsers usersActive={false} reload={reload} onReload={onRelad}/>
                 </Tab.Pane>
             )
         },
@@ -40,7 +42,7 @@ export function Users() {
         </div>
 
         <BasicModal show={showModal} close={onOpenCloseModal} title='Crear nuevo usuario'>
-        <UserForm close={onOpenCloseModal} user={{name: 'HD'}}/>
+        <UserForm close={onOpenCloseModal} onReload={onRelad}/>
     </BasicModal>
 
         </>
